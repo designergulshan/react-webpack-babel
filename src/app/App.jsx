@@ -6,7 +6,7 @@ const App = () => {
     <React.Fragment>
       <Header />
       <div className='container'>
-        <h1>Hello React</h1>
+        <h1>Hello Reactor!</h1>
       </div>
     </React.Fragment>
   )

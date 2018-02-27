@@ -5,22 +5,19 @@ const Navbar = () => {
     <nav>
       <ul className='pull-left'>
         <li>
-          <a href='#'>Home</a>
+          <a target='_blank' href='https://reactjs.org/docs/hello-world.html'>Docs</a>
         </li>
         <li>
-          <a href='#'>Modules</a>
+          <a target='_blank' href='https://reactjs.org/tutorial/tutorial.html'>Tutorial</a>
         </li>
         <li>
-          <a href='#'>Contact</a>
-        </li>
-        <li>
-          <a href='#'>Others</a>
+          <a target='_blank' href='https://reactjs.org/blog/'>Blog</a>
         </li>
       </ul>
 
       <ul className='pull-right'>
         <li>
-          <a href='#'>Login</a>
+          <span>It's me :)</span>
         </li>
       </ul>
     </nav>
