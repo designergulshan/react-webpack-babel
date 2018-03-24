@@ -1,0 +1,39 @@
+.default-form {
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 50px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  .error {
+    right: 0;
+    top: 30px;
+    color: #c00;
+    font-size: 14px;
+    position: absolute;
+  }
+  .btn {
+    display: block;
+    margin-top: 30px;
+  }
+  .form-row {
+    position: relative;
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+  }
+  textarea {
+    height: 150px;
+  }
+  .form-input {
+    width: 400px;
+    padding: 6px;
+    display: block;
+    font-size: 14px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border: 1px solid #bbb;
+  }
+}

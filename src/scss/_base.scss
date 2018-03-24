@@ -11,7 +11,7 @@ body {
 }
 
 a {
-  color: #666;
+  color: $anchor-color;
   &:hover {
     text-decoration: none;
   }
@@ -57,7 +57,6 @@ a {
   font-weight: bold;
   padding: 10px 20px;
   border-radius: 4px;
-  margin-bottom: 30px;
   transition: all .2s;
   background: $theme-color;
   text-transform: uppercase;
@@ -66,6 +65,14 @@ a {
   &:hover {
     border: 2px solid #000;
     background: lighten(#000, 20%);
+  }
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+    &:hover {
+      background: $theme-color;
+      border: 2px solid darken($theme-color, 5%);
+    }
   }
 }
 
