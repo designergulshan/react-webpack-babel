@@ -10,17 +10,63 @@ body {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
+a {
+  color: #666;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.site-footer {
+  padding: 15px;
+  font-size: 14px;
+  border-top: 1px solid #ddd;
+}
+
+.page-body {
+  min-height: 500px;
+}
+
 .container {
   width: 90%;
   margin: 0 auto;
+  .page-title {
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #333;
+  }
 }
 
+.col-left,
 .pull-left {
   float: left;
 }
 
+.col-right,
 .pull-right {
   float: right;
+}
+
+.col-left,
+.col-right {
+  width: 50%;
+}
+
+.btn {
+  color: #ffffff;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  transition: all .2s;
+  background: $theme-color;
+  text-transform: uppercase;
+  border: 2px solid darken($theme-color, 5%);
+  cursor: pointer;
+  &:hover {
+    border: 2px solid #000;
+    background: lighten(#000, 20%);
+  }
 }
 
 header {
@@ -31,12 +77,19 @@ header {
   box-shadow: 0 1px 2px rgba(0,0,0,.1);
   padding-left: 18px;
   padding-right: 18px;
+  background: #333333;
   .logo {
     float: left;
     font-size: 16px;
     color: $theme-color;
-    margin: 18px 30px 0 0;
     text-transform: uppercase;
+    a {
+      color: #fff;
+      padding: 20px;
+      display: block;
+      // color: $theme-color;
+      text-decoration: none;
+    }
     sup {
       color: #bbb;
       font-size: 12px;
@@ -47,23 +100,29 @@ header {
   nav {
     li {
       float: left;
+      color: #aaa;
       list-style: none;
       a, span {
         display: block;
         font-size: 12px;
         line-height: 12px;
-        padding: 23px 0 22px;
+        padding: 26px 0 21px;
         text-transform: uppercase;
       }
       a {
+        color: #ccc;
         font-weight: bold;
         padding-left: 14px;
         padding-right: 14px;
         transition: all .2s;
-        color: $anchor-color;
         text-decoration: none;
         &:hover {
           color: $theme-color;
+          border-bottom: 2px solid $theme-color;
+        }
+        &.active {
+          color: $theme-color;
+          border-bottom: 2px solid $theme-color;
         }
       }
     }

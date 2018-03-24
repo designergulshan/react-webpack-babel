@@ -1,16 +1,14 @@
 import React from 'react'
+import Routes from './Routes'
 import Header from './components/common/Header'
-import qutub from '../images/qutub.jpg'
+import Footer from './components/common/Footer'
 
 const App = () => {
   return (
     <React.Fragment>
       <Header />
-      <div className='container'>
-        <h1>Hello Reactor!</h1>
-        <br />
-        <img src={qutub} width='300' />
-      </div>
+      <Routes />
+      <Footer />
     </React.Fragment>
   )
 }

@@ -1,17 +1,15 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
   return (
     <nav>
       <ul className='pull-left'>
         <li>
-          <a target='_blank' href='https://reactjs.org/docs/hello-world.html'>Docs</a>
+          <NavLink to='/users'>Users</NavLink>
         </li>
         <li>
-          <a target='_blank' href='https://reactjs.org/tutorial/tutorial.html'>Tutorial</a>
-        </li>
-        <li>
-          <a target='_blank' href='https://reactjs.org/blog/'>Blog</a>
+          <NavLink to='/form'>Form</NavLink>
         </li>
       </ul>
 
