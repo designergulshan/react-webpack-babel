@@ -11,7 +11,8 @@ class FormPage extends Component {
       userDetails: '',
       userDetailsError: '',
       terms: false,
-      termsError: ''
+      termsError: '',
+      gender: ''
     }
 
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -56,16 +57,19 @@ class FormPage extends Component {
         userDetails: '',
         userDetailsError: '',
         terms: false,
-        termsError: ''
+        termsError: '',
+        gender: ''
       })
 
-      const { userEmail, userName, userDetails } = this.state
+      const { userEmail, userName, userDetails, gender } = this.state
       const postData = {
         userEmail,
         userName,
-        userDetails
+        userDetails,
+        gender
       }
-      window.console.log(postData)
+      
+      window.console.log(postData, this.state)
     }
   }
 
@@ -87,10 +91,11 @@ class FormPage extends Component {
       userDetails,
       userDetailsError,
       terms,
-      termsError
+      termsError,
+      gender
     } = this.state
     return (
-      <div className='home-page'>
+      <div className='form-page'>
         <h1 className='page-title'>Form Page!</h1>
         
         <form onSubmit={this.handleSubmit} className='default-form'>
@@ -104,7 +109,7 @@ class FormPage extends Component {
               id='userName'
               value={userName}
             />
-            <span className='error'>{userNameError}</span>
+            {userNameError && <span className='error'>{userNameError}</span>}
           </div>
           
           <div className='form-row'>
@@ -117,9 +122,35 @@ class FormPage extends Component {
               id='userEmail'
               value={userEmail}
             />
-            <span className='error'>{userEmailError}</span>
+            {userEmailError && <span className='error'>{userEmailError}</span>}
           </div>
           
+          <div className='form-row'>
+            <div>Gender:</div>
+
+            <label>
+              <input
+                name='gender'
+                type='radio'
+                value='male'
+                checked={gender === 'male'}
+                onChange={this.handleChange}
+              />
+              &nbsp; Male:
+            </label>
+
+            <label>
+              <input
+                name='gender'
+                type='radio'
+                value='female'
+                checked={gender === 'female'}
+                onChange={this.handleChange}
+              />
+              &nbsp; Female
+            </label>
+          </div>
+
           <div className='form-row'>
             <label htmlFor='userDetails'>Details:</label>
             <textarea
@@ -129,8 +160,9 @@ class FormPage extends Component {
               id='userDetails'
               value={userDetails}
             />
-            <span className='error'>{userDetailsError}</span>
+            {userDetailsError && <span className='error'>{userDetailsError}</span>}
           </div>
+
 
           <div className='form-row'>
             <label htmlFor='terms'>
@@ -142,7 +174,7 @@ class FormPage extends Component {
                 checked={terms ? 'true' : ''}
               /> Terms and Conditions
             </label>
-            <span className='error'>{termsError}</span>
+            {userDetailsError && <span className='error'>{termsError}</span>}
           </div>
 
           <button disabled={terms ? '' : 'disabled'} className='btn' type='submit'>Submit</button>

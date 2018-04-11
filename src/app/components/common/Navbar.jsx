@@ -11,6 +11,9 @@ const Navbar = () => {
         <li>
           <NavLink to='/form'>Form</NavLink>
         </li>
+        <li>
+          <NavLink to='/questions'>Questions</NavLink>
+        </li>
       </ul>
 
       <ul className='pull-right'>
