@@ -68,8 +68,9 @@ class FormPage extends Component {
         userDetails,
         gender
       }
-      
+
       window.console.log(postData, this.state)
+      window.console.log(this.location.value)
     }
   }
 
@@ -124,6 +125,16 @@ class FormPage extends Component {
             />
             {userEmailError && <span className='error'>{userEmailError}</span>}
           </div>
+
+          <div className='form-row'>
+            <label htmlFor='location'>Location:</label>
+            <input
+              id='location'
+              className='form-input'
+              type='text'
+              ref={input => this.location = input}
+            />
+          </div>
           
           <div className='form-row'>
             <div>Gender:</div>
@@ -162,7 +173,6 @@ class FormPage extends Component {
             />
             {userDetailsError && <span className='error'>{userDetailsError}</span>}
           </div>
-
 
           <div className='form-row'>
             <label htmlFor='terms'>

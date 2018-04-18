@@ -7,10 +7,12 @@ class UsersPage extends Component {
     
     this.state = {
       users: [],
-      moreInfo: false
+      moreInfo: false,
+      title: ''
     }
 
     this.handleClick = this.handleClick.bind(this)
+    this.requestTitle = this.requestTitle.bind(this)
   }
   
   componentDidMount() {
@@ -29,13 +31,21 @@ class UsersPage extends Component {
     })
   }
 
+  requestTitle(title) {
+    this.setState({
+      title
+    })
+  }
+
   render() {
-    const { users, moreInfo } = this.state
+    const { users, moreInfo, title } = this.state
     // window.console.log(users)
 
     return (
       <div className='users-page'>
         <h1 className='page-title'>Users Page</h1>
+        <span className='title'>{title}</span>
+
         <button className='btn' onClick={this.handleClick}>{moreInfo ? 'Hide' : 'Show'} More Info</button>
         <ul className='usersList'>
           {users && users.map(user => (
@@ -43,6 +53,7 @@ class UsersPage extends Component {
               key={user.id}
               user={user}
               moreInfo={moreInfo}
+              showTitle={this.requestTitle}
             />
           ))}
         </ul>
